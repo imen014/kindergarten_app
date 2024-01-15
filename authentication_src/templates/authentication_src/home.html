@@ -1,0 +1,10 @@
+{% extends 'authentication_src/base.html' %}
+
+
+{% block  content %}
+{{ message }}
+<a href="{% url 'logout-user' %}"> <strong> logout </strong> </a><br/>
+<a href="{% url 'get-users' %}"> <strong> get users </strong> </a><br/>
+<a href="{% url 'get-schools' %}"> <strong> get schools</strong> </a>
+
+{% endblock  %}

@@ -1,0 +1,27 @@
+{% extends 'kids_schools_management/base_design.html' %}
+
+
+{% block  content %}
+<ul>
+{% for school in schools %}
+<li>
+school name: {{ school.school_name }} <br/>
+school location: {{ school.school_location }} <br/>
+school owner: {{ school.school_owner }} <br/>
+manager email: {{ school.manager_email }} <br/>
+manager tel: {{ school.manager_tel }} 
+<form action="{% url 'update-school' school.id %}" method="GET">
+<input type="submit" value = "update" />
+</form>
+<form action="{% url 'delete-school' school.id %}" method="GET">
+<input type="submit" value = "delete" />
+</form>
+
+</li>
+{% endfor %}
+</ul>
+<a href="{% url 'logout-user' %}"> <strong> logout </strong> </a> <br/>
+<a href="{% url 'create-school' %}"> <strong> create school </strong> </a>
+
+
+{% endblock  %}
